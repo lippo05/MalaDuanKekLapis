@@ -25,7 +25,7 @@ body {
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, #5e2e1c 0%, #8b4b2a 100%);
-    padding: 2.5rem 1.5rem 3rem;
+    padding: 2.5rem 1.5rem 2rem;
     text-align: center;
     color: white;
     border-bottom-left-radius: 2rem;
@@ -43,7 +43,7 @@ body {
 }
 
 .hero p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     max-width: 600px;
     margin: 0.75rem auto 0;
     opacity: 0.9;
@@ -60,6 +60,39 @@ body {
     font-size: 0.8rem;
     margin-top: 1rem;
     backdrop-filter: blur(2px);
+}
+
+/* Stats Bar */
+.stats-bar {
+    max-width: 1000px;
+    margin: 1.5rem auto 0;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background: white;
+    border-radius: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid #efdfca;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #b87c4f;
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    color: #8b6b50;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* Filter Bar */
@@ -140,7 +173,7 @@ body {
     margin: 2rem auto 3rem;
     padding: 0 1.5rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     gap: 2rem;
 }
 
@@ -162,7 +195,7 @@ body {
 }
 
 .card-img {
-    height: 220px;
+    height: 240px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -174,13 +207,13 @@ body {
     position: absolute;
     top: 15px;
     left: 15px;
-    background: rgba(255,255,240,0.95);
+    background: rgba(0,0,0,0.7);
     backdrop-filter: blur(4px);
-    padding: 0.25rem 0.9rem;
+    padding: 0.3rem 0.9rem;
     border-radius: 40px;
     font-size: 0.7rem;
     font-weight: 700;
-    color: #754c2e;
+    color: #ffd966;
     letter-spacing: 0.5px;
 }
 
@@ -192,7 +225,7 @@ body {
 }
 
 .cake-name {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     font-weight: 700;
     font-family: 'Playfair Display', serif;
     margin-bottom: 0.25rem;
@@ -203,22 +236,25 @@ body {
 }
 
 .cake-desc {
-    font-size: 0.8rem;
-    color: #6b4c38;
+    font-size: 0.75rem;
+    color: #8b6b50;
     margin: 0.5rem 0;
     line-height: 1.4;
 }
 
 .price-group {
     margin: 0.8rem 0 0.5rem;
+    background: #fef9f2;
+    border-radius: 1rem;
+    padding: 0.5rem;
 }
 
 .price-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.4rem 0;
-    border-bottom: 1px dashed #f0e0ce;
+    padding: 0.4rem 0.5rem;
+    border-bottom: 1px solid #f0e0ce;
 }
 
 .price-item:last-child {
@@ -228,14 +264,14 @@ body {
 .size-label {
     font-weight: 600;
     color: #8b5a3a;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .price-value {
     font-weight: 800;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #b45a2e;
 }
 
@@ -282,5 +318,6 @@ footer {
     .filter-bar { flex-direction: column; align-items: stretch; }
     .category-buttons { justify-content: center; }
     .menu-grid { gap: 1.2rem; }
-    .cake-name { font-size: 1.2rem; }
+    .cake-name { font-size: 1.1rem; }
+    .card-img { height: 200px; }
 }
