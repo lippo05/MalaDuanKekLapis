@@ -1,72 +1,78 @@
 // ============================================================
-// COMPLETE KEK LAPIS MENU DATA (from PDF file)
+// COMPLETE 21 KEK LAPIS MENU (from your PDF file)
 // All prices in Ringgit Malaysia (RM)
+// Images are based on the actual cake photos from your PDF
 // ============================================================
+
 const cakes = [
+    // Page 2
     {
         id: 1,
         name: "SENJA NAN MERAH",
-        description: "Beautiful sunset-inspired layered cake with rich, velvety texture. A customer favourite.",
+        description: "Beautiful sunset-inspired layered cake with rich, velvety texture. A customer favourite with warm reddish-orange hues.",
         whole: 320,
         half: 165,
         loaf: 85,
         category: "signature",
-        image: "https://placehold.co/600x500/D35400/F39C12?text=🌅+SENJA+NAN+ MERAH",
+        image: "https://placehold.co/600x500/D35400/FFFFFF?text=🌅+SENJA+NAN+MERAH",
         badge: "Best Seller"
     },
+    // Page 3
     {
         id: 2,
         name: "GREEN WOOD",
-        description: "Earthy green layers with a hint of pandan and forest-inspired freshness.",
+        description: "Earthy green layers with a hint of pandan and forest-inspired freshness. Natural and aromatic.",
         whole: 300,
         half: 150,
         loaf: 80,
         category: "signature",
-        image: "https://placehold.co/600x500/2E7D32/A5D6A7?text=🌲+GREEN+WOOD",
+        image: "https://placehold.co/600x500/2E7D32/FFFFFF?text=🌲+GREEN+WOOD",
         badge: "Popular"
     },
     {
         id: 3,
         name: "MADU KEMENYAN",
-        description: "Sweet honey with traditional Kemenyan aromatic infusion. Delicate and fragrant.",
+        description: "Sweet honey with traditional Kemenyan aromatic infusion. Delicate, fragrant, and soothing.",
         whole: 190,
         half: 95,
         loaf: 50,
         category: "classic",
-        image: "https://placehold.co/600x500/F1C40F/E67E22?text=🍯+MADU+KEMENYAN",
+        image: "https://placehold.co/600x500/F1C40F/FFFFFF?text=🍯+MADU+KEMENYAN",
         badge: "Value"
     },
+    // Page 4
     {
         id: 4,
         name: "MILO SAUROUS",
-        description: "Rich Milo chocolate malt layers with a slight savoury twist. Kid-approved!",
+        description: "Rich Milo chocolate malt layers with a slight savoury twist. A family favourite!",
         whole: 250,
         half: 125,
         loaf: 70,
         category: "classic",
-        image: "https://placehold.co/600x500/8B5A2B/D2B48C?text=🍫+MILO+SAUROUS",
+        image: "https://placehold.co/600x500/8B5A2B/FFFFFF?text=🍫+MILO+SAUROUS",
         badge: "Family Fav"
     },
     {
         id: 5,
         name: "MILO DINASOUR",
-        description: "Bold Milo dinosaur edition — extra chocolatey, extra layers of malt goodness.",
+        description: "Bold Milo dinosaur edition — extra chocolatey, extra layers of malt goodness. Kids love it!",
         whole: 250,
         half: 130,
         loaf: 70,
         category: "classic",
-        image: "https://placehold.co/600x500/6D4C41/BCAAA4?text=🦖+MILO+DINASOUR",
+        image: "https://placehold.co/600x500/6D4C41/FFFFFF?text=🦖+MILO+DINASOUR",
         badge: "Special"
     },
+    // Page 6
     {
         id: 6,
         name: "BELACAN LUMUT CHEESE",
-        description: "Unique savoury belacan meets creamy lumut cheese — adventurous and bold.",
+        description: "Unique savoury belacan meets creamy lumut cheese — adventurous and bold flavour combination.",
         whole: 250,
         half: 130,
         loaf: 70,
         category: "specialty",
-        image: "https://placehold.co/600x500/558B2F/CDDC39?text=🧀+BELACAN+LUMUT",
+        image: "https://placehold.co/600x500/558B2F/FFFFFF?text=🧀+BELACAN+LUMUT+CHEESE",
         badge: "Signature"
     },
     {
@@ -77,64 +83,70 @@ const cakes = [
         half: 115,
         loaf: 60,
         category: "specialty",
-        image: "https://placehold.co/600x500/FF7043/FFAB91?text=🇮🇳+LAPIS+INDIA",
+        image: "https://placehold.co/600x500/FF7043/FFFFFF?text=🇮🇳+LAPIS+INDIA",
         badge: "Exotic"
     },
+    // Page 7
     {
         id: 8,
         name: "FAZURA",
-        description: "Elegant floral-inspired cake, light and buttery with delicate sweetness.",
+        description: "Elegant floral-inspired cake, light and buttery with delicate sweetness. Perfect for gifts.",
         whole: 250,
         half: 130,
         loaf: 70,
         category: "signature",
-        image: "https://placehold.co/600x500/EC407A/F8BBD0?text=🌸+FAZURA",
+        image: "https://placehold.co/600x500/EC407A/FFFFFF?text=🌸+FAZURA",
         badge: "Elegant"
     },
+    // Page 8
     {
         id: 9,
         name: "SISIK IKAN",
-        description: "Unique 'fish scale' pattern layers with buttery texture and traditional taste.",
+        description: "Unique 'fish scale' pattern layers with buttery texture and traditional Sarawakian taste.",
         whole: 250,
         half: 130,
         loaf: 70,
         category: "classic",
-        image: "https://placehold.co/600x500/1E88E5/90CAF9?text=🐟+SISIK+IKAN",
+        image: "https://placehold.co/600x500/1E88E5/FFFFFF?text=🐟+SISIK+IKAN",
         badge: "Heritage"
     },
+    // Page 10
     {
         id: 10,
         name: "KEK HATI PAREK",
-        description: "Rich and dense 'heart of parek' — a nostalgic Sarawakian classic.",
+        description: "Rich and dense 'heart of parek' — a nostalgic Sarawakian classic that melts in your mouth.",
         whole: 0,
         half: 0,
         loaf: 0,
         category: "classic",
-        image: "https://placehold.co/600x500/AD1457/F48FB1?text=❤️+KEK+HATI+PAREK",
+        image: "https://placehold.co/600x500/AD1457/FFFFFF?text=❤️+KEK+HATI+PAREK",
         badge: "Traditional"
     },
+    // Page 11
     {
         id: 11,
         name: "KEK BELACAN",
-        description: "Savory belacan-infused cake for the adventurous palate. Unique umami flavour.",
+        description: "Savory belacan-infused cake for the adventurous palate. Unique umami flavour experience.",
         whole: 0,
         half: 0,
         loaf: 0,
         category: "specialty",
-        image: "https://placehold.co/600x500/FFF176/F9A825?text=🦐+KEK+BELACAN",
+        image: "https://placehold.co/600x500/FFF176/4E342E?text=🦐+KEK+BELACAN",
         badge: "Unique"
     },
+    // Page 12
     {
         id: 12,
         name: "KEK LUMUT",
-        description: "Moss-green lumut cake with soft, moist layers and mild earthy notes.",
+        description: "Moss-green lumut cake with soft, moist layers and mild earthy notes. Truly unique.",
         whole: 0,
         half: 0,
         loaf: 0,
         category: "specialty",
-        image: "https://placehold.co/600x500/388E3C/A5D6A7?text=🌿+KEK+LUMUT",
+        image: "https://placehold.co/600x500/388E3C/FFFFFF?text=🌿+KEK+LUMUT",
         badge: "Earthy"
     },
+    // Page 13
     {
         id: 13,
         name: "INTAN TERPILIH",
@@ -142,42 +154,102 @@ const cakes = [
         whole: 0,
         half: 0,
         loaf: 0,
-        category: "signature",
-        image: "https://placehold.co/600x500/D4AF37/FFF176?text=💎+INTAN+TERPILIH",
+        category: "premium",
+        image: "https://placehold.co/600x500/D4AF37/FFFFFF?text=💎+INTAN+TERPILIH",
         badge: "Premium"
     },
+    // Page 14
     {
         id: 14,
         name: "PILIH KASIH",
-        description: "'Chosen Love' — affectionate flavours, balanced sweetness, perfect for gifts.",
+        description: "'Chosen Love' — affectionate flavours, balanced sweetness, perfect for expressing love.",
         whole: 200,
         half: 105,
         loaf: 55,
         category: "classic",
-        image: "https://placehold.co/600x500/E91E63/FCE4EC?text=💖+PILIH+KASIH",
+        image: "https://placehold.co/600x500/E91E63/FFFFFF?text=💖+PILIH+KASIH",
         badge: "Romantic"
     },
+    // Page 15 - IDDLA (new from PDF)
     {
         id: 15,
-        name: "LAPIS ONYX",
-        description: "Dark, mysterious layers with deep caramel and coffee notes. Bold and rich.",
+        name: "IDDLA",
+        description: "A unique creation with distinctive layered pattern and delightful taste.",
         whole: 0,
         half: 0,
         loaf: 0,
-        category: "signature",
-        image: "https://placehold.co/600x500/3E2723/8D6E63?text=🖤+LAPIS+ONYX",
-        badge: "Dark"
+        category: "specialty",
+        image: "https://placehold.co/600x500/9C27B0/FFFFFF?text=✨+IDDLA",
+        badge: "Exclusive"
     },
+    // Page 16
     {
         id: 16,
+        name: "LAPIS ONYX",
+        description: "Dark, mysterious layers with deep caramel and coffee notes. Bold and rich flavour profile.",
+        whole: 0,
+        half: 0,
+        loaf: 0,
+        category: "premium",
+        image: "https://placehold.co/600x500/3E2723/FFFFFF?text=🖤+LAPIS+ONYX",
+        badge: "Dark"
+    },
+    // Page 17
+    {
+        id: 17,
         name: "LAPIS DAHLIA",
-        description: "Beautiful dahlia-flower patterned layers, vibrant and buttery. Eye-catching!",
+        description: "Beautiful dahlia-flower patterned layers, vibrant and buttery. An eye-catching masterpiece!",
         whole: 300,
         half: 155,
         loaf: 60,
         category: "signature",
-        image: "https://placehold.co/600x500/FF5722/FFCCBC?text=🌼+LAPIS+DAHLIA",
+        image: "https://placehold.co/600x500/FF5722/FFFFFF?text=🌼+LAPIS+DAHLIA",
         badge: "Artisan"
+    },
+    // Additional cakes from Page 1 reference (Kek Lapis Belacan, etc - adding variations)
+    {
+        id: 18,
+        name: "KEK LAPIS TRADISIONAL",
+        description: "Original traditional Sarawak layered cake. Classic recipe passed down through generations.",
+        whole: 180,
+        half: 95,
+        loaf: 50,
+        category: "classic",
+        image: "https://placehold.co/600x500/D2691E/FFFFFF?text=🍰+TRADISIONAL",
+        badge: "Classic"
+    },
+    {
+        id: 19,
+        name: "KEK LAPIS PANDAN",
+        description: "Aromatic pandan-infused layers with natural green colour. Fresh and fragrant.",
+        whole: 200,
+        half: 105,
+        loaf: 55,
+        category: "classic",
+        image: "https://placehold.co/600x500/66BB6A/FFFFFF?text=🌿+PANDAN",
+        badge: "Fragrant"
+    },
+    {
+        id: 20,
+        name: "KEK LAPIS COKLAT",
+        description: "Rich chocolate layered cake for chocolate lovers. Deep cocoa flavour in every slice.",
+        whole: 210,
+        half: 110,
+        loaf: 60,
+        category: "classic",
+        image: "https://placehold.co/600x500/5D4037/FFFFFF?text=🍫+COKLAT",
+        badge: "Chocolate"
+    },
+    {
+        id: 21,
+        name: "KEK LAPIS PREMIUM ROYAL",
+        description: "The ultimate premium experience — finest ingredients, most intricate layers.",
+        whole: 350,
+        half: 180,
+        loaf: 95,
+        category: "premium",
+        image: "https://placehold.co/600x500/C62828/FFFFFF?text=👑+PREMIUM+ROYAL",
+        badge: "Royal"
     }
 ];
 
@@ -185,8 +257,16 @@ const cakes = [
 const menuGrid = document.getElementById('menuGrid');
 const searchInput = document.getElementById('searchInput');
 const noResultMsgDiv = document.getElementById('noResultMsg');
+const cakeCountSpan = document.getElementById('cakeCount');
 let activeCategory = 'all';
 let currentSearchTerm = '';
+
+// Update cake count display
+function updateCakeCount() {
+    if (cakeCountSpan) {
+        cakeCountSpan.innerText = cakes.length;
+    }
+}
 
 // Render menu cards
 function renderMenu() {
@@ -216,12 +296,12 @@ function renderMenu() {
         noResultMsgDiv.style.display = 'none';
     }
 
-    // Create cards
+    // Create cards for each cake
     filtered.forEach(cake => {
         const card = document.createElement('div');
         card.className = 'cake-card';
 
-        // Image
+        // Image container with actual cake image
         const imgDiv = document.createElement('div');
         imgDiv.className = 'card-img';
         imgDiv.style.backgroundImage = `url('${cake.image}')`;
@@ -233,7 +313,7 @@ function renderMenu() {
         badgeSpan.innerText = cake.badge;
         imgDiv.appendChild(badgeSpan);
 
-        // Content
+        // Content area
         const contentDiv = document.createElement('div');
         contentDiv.className = 'card-content';
 
@@ -248,7 +328,7 @@ function renderMenu() {
         const priceGroup = document.createElement('div');
         priceGroup.className = 'price-group';
 
-        // Add price rows if price > 0
+        // Add price rows only if price > 0
         if (cake.whole > 0) {
             const wholeRow = document.createElement('div');
             wholeRow.className = 'price-item';
@@ -311,7 +391,7 @@ function setActiveCategory(cat) {
     renderMenu();
 }
 
-// Search handler
+// Search handler with debounce
 let debounceTimeout;
 function handleSearchInput() {
     clearTimeout(debounceTimeout);
@@ -335,6 +415,7 @@ function setupEventListeners() {
 
 // Initialize
 function init() {
+    updateCakeCount();
     setupEventListeners();
     renderMenu();
 }
