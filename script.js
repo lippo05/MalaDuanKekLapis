@@ -1,8 +1,11 @@
 // ============================================================
-// COMPLETE 21 KEK LAPIS MENU (from your PDF file)
+// COMPLETE 21 KEK LAPIS MENU with WHATSAPP INTEGRATION
 // All prices in Ringgit Malaysia (RM)
-// Images are based on the actual cake photos from your PDF
 // ============================================================
+
+// YOUR WHATSAPP NUMBER (format: country code + number, no spaces, no +)
+// Example: +60 18-579 4394 becomes 60185794394
+const WHATSAPP_NUMBER = "60185794394";  // 🔴 CHANGE THIS TO YOUR NUMBER
 
 const cakes = [
     // Page 2
@@ -156,7 +159,7 @@ const cakes = [
         image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/PilihKasih.jpg",
         badge: "Romantic"
     },
-    // Page 15 - IDDLA (new from PDF)
+    // Page 15
     {
         id: 15,
         name: "IDOLA",
@@ -189,7 +192,7 @@ const cakes = [
         image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Dahlia.jpg",
         badge: "Artisan"
     },
-    // Additional cakes from Page 1 reference (Kek Lapis Belacan, etc - adding variations)
+    // Additional cakes
     {
         id: 18,
         name: "BAKLAVA",
@@ -235,6 +238,34 @@ function updateCakeCount() {
     if (cakeCountSpan) {
         cakeCountSpan.innerText = cakes.length;
     }
+}
+
+// Create WhatsApp order button for each cake
+function createWhatsAppButton(cakeName, cakePrice) {
+    const button = document.createElement('button');
+    button.className = 'order-btn';
+    button.innerText = '📞 Enquire / Order';
+    
+    button.addEventListener('click', () => {
+        // Create a pre-filled message with cake details
+        const message = `Hi! I'm interested in ordering *${cakeName}*.
+        
+📋 Cake Details:
+🍰 Name: ${cakeName}
+💰 Price: RM ${cakePrice}
+
+Can you please provide more details about availability and delivery?`;
+        
+        const encodedMessage = encodeURIComponent(message);
+        
+        // WhatsApp URL - opens chat with pre-filled message
+        const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+        
+        // Open WhatsApp in new tab
+        window.open(whatsappUrl, '_blank');
+    });
+    
+    return button;
 }
 
 // Render menu cards
@@ -290,9 +321,10 @@ function renderMenu() {
         nameEl.className = 'cake-name';
         nameEl.innerText = cake.name;
 
+        // Description (add fallback if missing)
         const descEl = document.createElement('p');
         descEl.className = 'cake-desc';
-        descEl.innerText = cake.description;
+        descEl.innerText = cake.description || "Delicious handcrafted Sarawak layered cake with premium ingredients.";
 
         const priceGroup = document.createElement('div');
         priceGroup.className = 'price-group';
@@ -326,13 +358,8 @@ function renderMenu() {
             priceGroup.appendChild(contactRow);
         }
 
-        // Order button
-        const orderBtn = document.createElement('button');
-        orderBtn.className = 'order-btn';
-        orderBtn.innerText = '📞 Enquire / Order';
-        orderBtn.addEventListener('click', () => {
-            alert(`🍰 ${cake.name}\n\nPlease contact us at +60 18-579 4394(Whatsapp) to place your order.\nWhatsapp Me Right now!`);
-        });
+        // Create WhatsApp button (using whole cake price as reference)
+        const orderBtn = createWhatsAppButton(cake.name, cake.whole);
 
         contentDiv.appendChild(nameEl);
         contentDiv.appendChild(descEl);
