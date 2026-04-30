@@ -248,13 +248,13 @@ function createWhatsAppButton(cakeName, cakePrice) {
     
     button.addEventListener('click', () => {
         // Create a pre-filled message with cake details
-        const message = `Hi! I'm interested in ordering *${cakeName}*.
+        const message = `Selamat Pagi,Kamek mok order *${cakeName}*.
         
 📋 Cake Details:
-🍰 Name: ${cakeName}
-💰 Price: RM ${cakePrice}
-
-Can you please provide more details about availability and delivery?`;
+    Name Oder:
+    Name: ${cakeName}
+    Tarikh (PickUP/Delivery):
+    Alamat (Jika Delivery):`;
         
         const encodedMessage = encodeURIComponent(message);
         
