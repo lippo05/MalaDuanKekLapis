@@ -197,7 +197,7 @@ const cakes = [
         half: 255,
         loaf: 130,
         category: "premium",
-        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/Baklava.jpg",
+        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Baklava.jpg",
         badge: "Viral"
     },
     {
