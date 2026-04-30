@@ -13,7 +13,7 @@ const cakes = [
         half: 165,
         loaf: 85,
         category: "signature",
-        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/main/images/SenjaNanMerah.jpg",
+        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/SenjaNanMerah.jpg",
         badge: "Best Seller"
     },
     // Page 3
@@ -24,7 +24,7 @@ const cakes = [
         half: 150,
         loaf: 80,
         category: "signature",
-        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/GreenWood.jpg",
+        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/GreenWood.jpg",
         badge: "Popular"
     },
     {
@@ -34,7 +34,7 @@ const cakes = [
         half: 95,
         loaf: 50,
         category: "classic",
-        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/MaduKemenyan.jpg",
+        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/MaduKemenyan.jpg",
         badge: "Value"
     },
     // Page 4
@@ -45,7 +45,7 @@ const cakes = [
         half: 125,
         loaf: 70,
         category: "classic",
-        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/MiloSaurous.jpg",
+        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/MiloSaurous.jpg",
         badge: "Family Fav"
     },
     {
@@ -55,7 +55,7 @@ const cakes = [
         half: 130,
         loaf: 70,
         category: "classic",
-        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/MiloDinasour.jpg",
+        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/MiloDinasour.jpg",
         badge: "Special"
     },
     // Page 6
@@ -66,7 +66,7 @@ const cakes = [
         half: 130,
         loaf: 70,
         category: "specialty",
-        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/BelacanLumutCheese.jpg",
+        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/BelacanLumutCheese.jpg",
         badge: "Signature"
     },
     {
@@ -76,7 +76,7 @@ const cakes = [
         half: 115,
         loaf: 60,
         category: "specialty",
-        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/LapisIndia.jpg",
+        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/LapisIndia.jpg",
         badge: "Exotic"
     },
     // Page 7
@@ -87,7 +87,7 @@ const cakes = [
         half: 130,
         loaf: 70,
         category: "signature",
-        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/Fazura.jpg",
+        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Fazura.jpg",
         badge: "Elegant"
     },
     // Page 8
@@ -98,7 +98,7 @@ const cakes = [
         half: 130,
         loaf: 70,
         category: "classic",
-        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/SisikIkan.jpg",
+        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/SisikIkan.jpg",
         badge: "Heritage"
     },
     // Page 10
@@ -109,7 +109,7 @@ const cakes = [
         half: 105,
         loaf: 55,
         category: "classic",
-        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/HatiParek.jpgK",
+        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/HatiParek.jpg",
         badge: "Traditional"
     },
     // Page 11
@@ -120,7 +120,7 @@ const cakes = [
         half: 115,
         loaf: 60,
         category: "specialty",
-        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/Belacan.jpg",
+        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Belacan.jpg",
         badge: "Unique"
     },
     // Page 12
@@ -131,7 +131,7 @@ const cakes = [
         half: 105,
         loaf: 55,
         category: "specialty",
-        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/Lumut.jpg",
+        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Lumut.jpg",
         badge: "Earthy"
     },
     // Page 13
@@ -142,7 +142,7 @@ const cakes = [
         half: 105,
         loaf: 55,
         category: "premium",
-        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/IntanTerpilih.jpg",
+        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/IntanTerpilih.jpg",
         badge: "Premium"
     },
     // Page 14
@@ -153,7 +153,7 @@ const cakes = [
         half: 105,
         loaf: 55,
         category: "classic",
-        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/PilihKasih.jpg",
+        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/PilihKasih.jpg",
         badge: "Romantic"
     },
     // Page 15 - IDDLA (new from PDF)
@@ -164,7 +164,7 @@ const cakes = [
         half: 105,
         loaf: 55,
         category: "specialty",
-        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/Idola.jpg",
+        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Idola.jpg",
         badge: "Exclusive"
     },
     // Page 16
@@ -175,7 +175,7 @@ const cakes = [
         half: 180,
         loaf: 95,
         category: "premium",
-        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/ONYX.jpg",
+        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/ONYX.jpg",
         badge: "Dark"
     },
     // Page 17
@@ -186,7 +186,7 @@ const cakes = [
         half: 155,
         loaf: 60,
         category: "signature",
-        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/Dahlia.jpg",
+        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Dahlia.jpg",
         badge: "Artisan"
     },
     // Additional cakes from Page 1 reference (Kek Lapis Belacan, etc - adding variations)
@@ -207,7 +207,7 @@ const cakes = [
         half: 130,
         loaf: 70,
         category: "premium",
-        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/BlackShadow.jpg",
+        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/BlackShadow.jpg",
         badge: "Fragrant"
     },
     {
@@ -217,7 +217,7 @@ const cakes = [
         half: 145,
         loaf: 75,
         category: "classic",
-        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/RoseQueen.jpg",
+        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/RoseQueen.jpg",
         badge: "Chocolate"
     }
 ];
