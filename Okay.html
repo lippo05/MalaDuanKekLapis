@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Kek Lapis Sarawak | Artisan Layered Cake Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="hero">
+        <h1>🍰 Kek Lapis Sarawak</h1>
+        <p>Exquisite handmade layered cakes — authentic flavours, vibrant layers, perfect for festive moments & daily cravings.</p>
+        <div class="hero-badge">✨ 20+ Artisan Layers ✨</div>
+    </div>
+
+    <div class="filter-bar">
+        <div class="search-wrapper">
+            <span>🔍</span>
+            <input type="text" id="searchInput" placeholder="Search cake name, flavour... (e.g. pandan, chocolate)">
+        </div>
+        <div class="category-buttons" id="categoryContainer">
+            <button class="cat-btn active" data-cat="all">All Cakes</button>
+            <button class="cat-btn" data-cat="classic">Classic</button>
+            <button class="cat-btn" data-cat="premium">Premium</button>
+            <button class="cat-btn" data-cat="fruity">Fruity</button>
+            <button class="cat-btn" data-cat="signature">Signature</button>
+        </div>
+    </div>
+
+    <div class="menu-grid" id="menuGrid">
+        <div class="no-results" style="display:none;" id="noResultMsg">🍂 No kek lapis found — try another keyword or category 🍂</div>
+    </div>
+
+    <footer>
+        🌸 Handcrafted with love & layers — each cake is a work of art. <br>
+        📞 To order, contact us: +60 12-345 6789 📍 Kuching, Sarawak
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
