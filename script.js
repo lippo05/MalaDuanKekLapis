@@ -331,7 +331,7 @@ function renderMenu() {
         orderBtn.className = 'order-btn';
         orderBtn.innerText = '📞 Enquire / Order';
         orderBtn.addEventListener('click', () => {
-            alert(`🍰 ${cake.name}\n\nPlease contact us at +60 12-345 6789 to place your order.\nWe deliver fresh Kek Lapis daily!`);
+            alert(`🍰 ${cake.name}\n\nPlease contact us at +60 18-579 4394(Whatsapp) to place your order.\nWhatsapp Me Right now!`);
         });
 
         contentDiv.appendChild(nameEl);
