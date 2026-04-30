@@ -13,7 +13,7 @@ const cakes = [
         half: 165,
         loaf: 85,
         category: "signature",
-        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/SenjaNanMerah.jpg",
+        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/main/images/SenjaNanMerah.jpg",
         badge: "Best Seller"
     },
     // Page 3
