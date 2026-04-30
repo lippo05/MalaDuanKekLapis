@@ -9,247 +9,216 @@ const cakes = [
     {
         id: 1,
         name: "SENJA NAN MERAH",
-        description: "Beautiful sunset-inspired layered cake with rich, velvety texture. A customer favourite with warm reddish-orange hues.",
         whole: 320,
         half: 165,
         loaf: 85,
         category: "signature",
-        image: "https://placehold.co/600x500/D35400/FFFFFF?text=🌅+SENJA+NAN+MERAH",
+        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/SenjaNanMerah.jpg",
         badge: "Best Seller"
     },
     // Page 3
     {
         id: 2,
         name: "GREEN WOOD",
-        description: "Earthy green layers with a hint of pandan and forest-inspired freshness. Natural and aromatic.",
         whole: 300,
         half: 150,
         loaf: 80,
         category: "signature",
-        image: "https://placehold.co/600x500/2E7D32/FFFFFF?text=🌲+GREEN+WOOD",
+        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/GreenWood.jpg",
         badge: "Popular"
     },
     {
         id: 3,
         name: "MADU KEMENYAN",
-        description: "Sweet honey with traditional Kemenyan aromatic infusion. Delicate, fragrant, and soothing.",
         whole: 190,
         half: 95,
         loaf: 50,
         category: "classic",
-        image: "https://placehold.co/600x500/F1C40F/FFFFFF?text=🍯+MADU+KEMENYAN",
+        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/MaduKemenyan.jpg",
         badge: "Value"
     },
     // Page 4
     {
         id: 4,
         name: "MILO SAUROUS",
-        description: "Rich Milo chocolate malt layers with a slight savoury twist. A family favourite!",
         whole: 250,
         half: 125,
         loaf: 70,
         category: "classic",
-        image: "https://placehold.co/600x500/8B5A2B/FFFFFF?text=🍫+MILO+SAUROUS",
+        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/MiloSaurous.jpg",
         badge: "Family Fav"
     },
     {
         id: 5,
         name: "MILO DINASOUR",
-        description: "Bold Milo dinosaur edition — extra chocolatey, extra layers of malt goodness. Kids love it!",
         whole: 250,
         half: 130,
         loaf: 70,
         category: "classic",
-        image: "https://placehold.co/600x500/6D4C41/FFFFFF?text=🦖+MILO+DINASOUR",
+        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/MiloDinasour.jpg",
         badge: "Special"
     },
     // Page 6
     {
         id: 6,
         name: "BELACAN LUMUT CHEESE",
-        description: "Unique savoury belacan meets creamy lumut cheese — adventurous and bold flavour combination.",
         whole: 250,
         half: 130,
         loaf: 70,
         category: "specialty",
-        image: "https://placehold.co/600x500/558B2F/FFFFFF?text=🧀+BELACAN+LUMUT+CHEESE",
+        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/BelacanLumutCheese.jpg",
         badge: "Signature"
     },
     {
         id: 7,
         name: "LAPIS INDIA",
-        description: "Spiced Indian-inspired layers with cardamom and rose hints. Exotic and aromatic.",
         whole: 220,
         half: 115,
         loaf: 60,
         category: "specialty",
-        image: "https://placehold.co/600x500/FF7043/FFFFFF?text=🇮🇳+LAPIS+INDIA",
+        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/LapisIndia.jpg",
         badge: "Exotic"
     },
     // Page 7
     {
         id: 8,
         name: "FAZURA",
-        description: "Elegant floral-inspired cake, light and buttery with delicate sweetness. Perfect for gifts.",
         whole: 250,
         half: 130,
         loaf: 70,
         category: "signature",
-        image: "https://placehold.co/600x500/EC407A/FFFFFF?text=🌸+FAZURA",
+        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/Fazura.jpg",
         badge: "Elegant"
     },
     // Page 8
     {
         id: 9,
         name: "SISIK IKAN",
-        description: "Unique 'fish scale' pattern layers with buttery texture and traditional Sarawakian taste.",
         whole: 250,
         half: 130,
         loaf: 70,
         category: "classic",
-        image: "https://placehold.co/600x500/1E88E5/FFFFFF?text=🐟+SISIK+IKAN",
+        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/SisikIkan.jpg",
         badge: "Heritage"
     },
     // Page 10
     {
         id: 10,
-        name: "KEK HATI PAREK",
-        description: "Rich and dense 'heart of parek' — a nostalgic Sarawakian classic that melts in your mouth.",
-        whole: 0,
-        half: 0,
-        loaf: 0,
+        name: "HATI PAREK",
+        whole: 200,
+        half: 105,
+        loaf: 55,
         category: "classic",
-        image: "https://placehold.co/600x500/AD1457/FFFFFF?text=❤️+KEK+HATI+PAREK",
+        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/HatiParek.jpgK",
         badge: "Traditional"
     },
     // Page 11
     {
         id: 11,
-        name: "KEK BELACAN",
-        description: "Savory belacan-infused cake for the adventurous palate. Unique umami flavour experience.",
-        whole: 0,
-        half: 0,
-        loaf: 0,
+        name: "BELACAN",
+        whole: 220,
+        half: 115,
+        loaf: 60,
         category: "specialty",
-        image: "https://placehold.co/600x500/FFF176/4E342E?text=🦐+KEK+BELACAN",
+        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/Belacan.jpg",
         badge: "Unique"
     },
     // Page 12
     {
         id: 12,
-        name: "KEK LUMUT",
-        description: "Moss-green lumut cake with soft, moist layers and mild earthy notes. Truly unique.",
-        whole: 0,
-        half: 0,
-        loaf: 0,
+        name: "LUMUT",
+        whole: 200,
+        half: 105,
+        loaf: 55,
         category: "specialty",
-        image: "https://placehold.co/600x500/388E3C/FFFFFF?text=🌿+KEK+LUMUT",
+        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/Lumut.jpg",
         badge: "Earthy"
     },
     // Page 13
     {
         id: 13,
         name: "INTAN TERPILIH",
-        description: "'Chosen Diamond' — premium selected layers, rich butter and refined sweetness.",
-        whole: 0,
-        half: 0,
-        loaf: 0,
+        whole: 200,
+        half: 105,
+        loaf: 55,
         category: "premium",
-        image: "https://placehold.co/600x500/D4AF37/FFFFFF?text=💎+INTAN+TERPILIH",
+        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/IntanTerpilih.jpg",
         badge: "Premium"
     },
     // Page 14
     {
         id: 14,
         name: "PILIH KASIH",
-        description: "'Chosen Love' — affectionate flavours, balanced sweetness, perfect for expressing love.",
         whole: 200,
         half: 105,
         loaf: 55,
         category: "classic",
-        image: "https://placehold.co/600x500/E91E63/FFFFFF?text=💖+PILIH+KASIH",
+        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/PilihKasih.jpg",
         badge: "Romantic"
     },
     // Page 15 - IDDLA (new from PDF)
     {
         id: 15,
-        name: "IDDLA",
-        description: "A unique creation with distinctive layered pattern and delightful taste.",
-        whole: 0,
-        half: 0,
-        loaf: 0,
+        name: "IDOLA",
+        whole: 200,
+        half: 105,
+        loaf: 55,
         category: "specialty",
-        image: "https://placehold.co/600x500/9C27B0/FFFFFF?text=✨+IDDLA",
+        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/Idola.jpg",
         badge: "Exclusive"
     },
     // Page 16
     {
         id: 16,
         name: "LAPIS ONYX",
-        description: "Dark, mysterious layers with deep caramel and coffee notes. Bold and rich flavour profile.",
-        whole: 0,
-        half: 0,
-        loaf: 0,
+        whole: 350,
+        half: 180,
+        loaf: 95,
         category: "premium",
-        image: "https://placehold.co/600x500/3E2723/FFFFFF?text=🖤+LAPIS+ONYX",
+        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/ONYX.jpg",
         badge: "Dark"
     },
     // Page 17
     {
         id: 17,
         name: "LAPIS DAHLIA",
-        description: "Beautiful dahlia-flower patterned layers, vibrant and buttery. An eye-catching masterpiece!",
         whole: 300,
         half: 155,
         loaf: 60,
         category: "signature",
-        image: "https://placehold.co/600x500/FF5722/FFFFFF?text=🌼+LAPIS+DAHLIA",
+        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/Dahlia.jpg",
         badge: "Artisan"
     },
     // Additional cakes from Page 1 reference (Kek Lapis Belacan, etc - adding variations)
     {
         id: 18,
-        name: "KEK LAPIS TRADISIONAL",
-        description: "Original traditional Sarawak layered cake. Classic recipe passed down through generations.",
-        whole: 180,
-        half: 95,
-        loaf: 50,
-        category: "classic",
-        image: "https://placehold.co/600x500/D2691E/FFFFFF?text=🍰+TRADISIONAL",
-        badge: "Classic"
+        name: "BAKLAVA",
+        whole: 500,
+        half: 255,
+        loaf: 130,
+        category: "premium",
+        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/Baklava.jpg",
+        badge: "Viral"
     },
     {
         id: 19,
-        name: "KEK LAPIS PANDAN",
-        description: "Aromatic pandan-infused layers with natural green colour. Fresh and fragrant.",
-        whole: 200,
-        half: 105,
-        loaf: 55,
-        category: "classic",
-        image: "https://placehold.co/600x500/66BB6A/FFFFFF?text=🌿+PANDAN",
+        name: "BLACK SHADOW",
+        whole: 250,
+        half: 130,
+        loaf: 70,
+        category: "premium",
+        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/BlackShadow.jpg",
         badge: "Fragrant"
     },
     {
         id: 20,
-        name: "KEK LAPIS COKLAT",
-        description: "Rich chocolate layered cake for chocolate lovers. Deep cocoa flavour in every slice.",
-        whole: 210,
-        half: 110,
-        loaf: 60,
+        name: "ROSE QUEEN",
+        whole: 280,
+        half: 145,
+        loaf: 75,
         category: "classic",
-        image: "https://placehold.co/600x500/5D4037/FFFFFF?text=🍫+COKLAT",
+        image: "https://github.com/lippo05/MalaDuanKekLapis/blob/df26ebbb9da72730a328518d72a0d714b572a1b7/images/RoseQueen.jpg",
         badge: "Chocolate"
-    },
-    {
-        id: 21,
-        name: "KEK LAPIS PREMIUM ROYAL",
-        description: "The ultimate premium experience — finest ingredients, most intricate layers.",
-        whole: 350,
-        half: 180,
-        loaf: 95,
-        category: "premium",
-        image: "https://placehold.co/600x500/C62828/FFFFFF?text=👑+PREMIUM+ROYAL",
-        badge: "Royal"
     }
 ];
 
