@@ -253,6 +253,7 @@ function createWhatsAppButton(cakeName, cakePrice) {
      *Cake Details*
     Name Oder: *Nama Pembeli*
     Name: ${cakeName}
+    Size (Whole/Half/Loaf): 
     Tarikh (PickUP/Delivery): *Tarikh ambik/hantar*
     Alamat (Jika Delivery):*Alamat Rumah* `;
         
