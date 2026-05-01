@@ -511,6 +511,11 @@ body {
     border-color: #b87c4f;
 }
 
+.size-option.disabled-size {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 .size-modal-buttons {
     display: flex;
     gap: 1rem;
@@ -525,7 +530,7 @@ body {
     cursor: pointer;
 }
 
-.confirm-add-btn {
+.confirm-btn {
     flex: 1;
     background: #b87c4f;
     border: none;
@@ -533,6 +538,31 @@ body {
     border-radius: 40px;
     color: white;
     cursor: pointer;
+}
+
+/* Toast Notification */
+.toast-notification {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #2d2418;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    z-index: 2000;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.toast-notification.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
 }
 
 footer {
@@ -552,4 +582,5 @@ footer {
     .cake-name { font-size: 1.1rem; }
     .card-img { height: 200px; }
     .button-group { flex-direction: column; }
+    .toast-notification { white-space: normal; text-align: center; width: 80%; }
 }
