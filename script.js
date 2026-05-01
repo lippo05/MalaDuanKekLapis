@@ -13,26 +13,26 @@ let selectedCake = null;
 let currentAction = null; // 'cart' or 'order'
 
 const cakes = [
-    { id: 1, name: "SENJA NAN MERAH", whole: 320, half: 165, loaf: 85, category: "signature", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/SenjaNanMerah.jpg", badge: "Best Seller" },
-    { id: 2, name: "GREEN WOOD", whole: 300, half: 150, loaf: 80, category: "signature", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/GreenWood.jpg", badge: "Popular" },
-    { id: 3, name: "MADU KEMENYAN", whole: 190, half: 95, loaf: 50, category: "classic", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/MaduKemenyan.jpg", badge: "Value" },
-    { id: 4, name: "MILO SAUROUS", whole: 250, half: 125, loaf: 70, category: "classic", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/MiloSaurous.jpg", badge: "Family Fav" },
-    { id: 5, name: "MILO DINASOUR", whole: 250, half: 130, loaf: 70, category: "classic", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/MiloDinasour.jpg", badge: "Special" },
-    { id: 6, name: "BELACAN LUMUT CHEESE", whole: 250, half: 130, loaf: 70, category: "specialty", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/BelacanLumutCheese.jpg", badge: "Signature" },
-    { id: 7, name: "LAPIS INDIA", whole: 220, half: 115, loaf: 60, category: "specialty", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/LapisIndia.jpg", badge: "Exotic" },
-    { id: 8, name: "FAZURA", whole: 250, half: 130, loaf: 70, category: "signature", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Fazura.jpg", badge: "Elegant" },
-    { id: 9, name: "SISIK IKAN", whole: 250, half: 130, loaf: 70, category: "classic", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/SisikIkan.jpg", badge: "Heritage" },
-    { id: 10, name: "HATI PAREK", whole: 200, half: 105, loaf: 55, category: "classic", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/HatiParek.jpg", badge: "Traditional" },
-    { id: 11, name: "BELACAN", whole: 220, half: 115, loaf: 60, category: "specialty", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Belacan.jpg", badge: "Unique" },
-    { id: 12, name: "LUMUT", whole: 200, half: 105, loaf: 55, category: "specialty", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Lumut.jpg", badge: "Earthy" },
+    { id: 1, name: "SENJA NAN MERAH", whole: 320, half: 165, loaf: 85, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/SenjaNanMerah.jpg", badge: "Best Seller" },
+    { id: 2, name: "GREEN WOOD", whole: 300, half: 150, loaf: 80, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/GreenWood.jpg", badge: "Popular" },
+    { id: 3, name: "MADU KEMENYAN", whole: 190, half: 95, loaf: 50, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/MaduKemenyan.jpg", badge: "Value" },
+    { id: 4, name: "MILO SAUROUS", whole: 250, half: 125, loaf: 70, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/MiloSaurous.jpg", badge: "Family Fav" },
+    { id: 5, name: "MILO DINASOUR", whole: 250, half: 130, loaf: 70, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/MiloDinasour.jpg", badge: "Special" },
+    { id: 6, name: "BELACAN LUMUT CHEESE", whole: 250, half: 130, loaf: 70, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/BelacanLumutCheese.jpg", badge: "Signature" },
+    { id: 7, name: "LAPIS INDIA", whole: 220, half: 115, loaf: 60, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/LapisIndia.jpg", badge: "Exotic" },
+    { id: 8, name: "FAZURA", whole: 250, half: 130, loaf: 70, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Fazura.jpg", badge: "Elegant" },
+    { id: 9, name: "SISIK IKAN", whole: 250, half: 130, loaf: 70, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/SisikIkan.jpg", badge: "Heritage" },
+    { id: 10, name: "HATI PAREK", whole: 200, half: 105, loaf: 55, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/HatiParek.jpg", badge: "Traditional" },
+    { id: 11, name: "BELACAN", whole: 220, half: 115, loaf: 60, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Belacan.jpg", badge: "Unique" },
+    { id: 12, name: "LUMUT", whole: 200, half: 105, loaf: 55, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Lumut.jpg", badge: "Earthy" },
     { id: 13, name: "INTAN TERPILIH", whole: 200, half: 105, loaf: 55, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/IntanTerpilih.jpg", badge: "Premium" },
-    { id: 14, name: "PILIH KASIH", whole: 200, half: 105, loaf: 55, category: "classic", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/PilihKasih.jpg", badge: "Romantic" },
-    { id: 15, name: "IDOLA", whole: 200, half: 105, loaf: 55, category: "specialty", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Idola.jpg", badge: "Exclusive" },
+    { id: 14, name: "PILIH KASIH", whole: 200, half: 105, loaf: 55, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/PilihKasih.jpg", badge: "Romantic" },
+    { id: 15, name: "IDOLA", whole: 200, half: 105, loaf: 55, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Idola.jpg", badge: "Exclusive" },
     { id: 16, name: "LAPIS ONYX", whole: 350, half: 180, loaf: 95, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/ONYX.jpg", badge: "Dark" },
-    { id: 17, name: "LAPIS DAHLIA", whole: 300, half: 155, loaf: 60, category: "signature", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Dahlia.jpg", badge: "Artisan" },
+    { id: 17, name: "LAPIS DAHLIA", whole: 300, half: 155, loaf: 60, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Dahlia.jpg", badge: "Artisan" },
     { id: 18, name: "BAKLAVA", whole: 500, half: 255, loaf: 130, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Baklava.jpg", badge: "Viral" },
     { id: 19, name: "BLACK SHADOW", whole: 250, half: 130, loaf: 70, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/BlackShadow.jpg", badge: "Fragrant" },
-    { id: 20, name: "ROSE QUEEN", whole: 280, half: 145, loaf: 75, category: "classic", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/RoseQueen.jpg", badge: "Chocolate" }
+    { id: 20, name: "ROSE QUEEN", whole: 280, half: 145, loaf: 75, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/RoseQueen.jpg", badge: "Chocolate" }
 ];
 
 // DOM Elements
