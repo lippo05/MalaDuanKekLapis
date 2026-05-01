@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Kek Lapis Sarawak | Complete Menu - 20 Artisan Cakes</title>
+    <title>Syaz Kek Lapis | Sarawak Layered Cake</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="hero">
-    <h1>🍰 Syaz Kek Lapis </h1>
+    <h1>🍰 Syaz Kek Lapis</h1>
     <p>Handcrafted layered cakes — authentic Sarawakian flavours, premium ingredients, perfect for every celebration.</p>
     <div class="hero-badge">✨ 20 Artisan Flavours ✨</div>
 </div>
@@ -42,15 +42,54 @@
         <button class="cat-btn" data-cat="specialty">Specialty</button>
         <button class="cat-btn" data-cat="premium">Premium</button>
     </div>
+    <button class="cart-icon-btn" id="cartIconBtn">
+        🛒 <span id="cartCount">0</span>
+    </button>
 </div>
 
 <div class="menu-grid" id="menuGrid">
     <div class="no-results" style="display:none;" id="noResultMsg">🍂 No kek lapis found — try another keyword 🍂</div>
 </div>
 
+<!-- Shopping Cart Modal -->
+<div class="cart-modal" id="cartModal">
+    <div class="cart-modal-content">
+        <div class="cart-modal-header">
+            <h2>🛒 Your Trolley</h2>
+            <button class="close-cart" id="closeCartBtn">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart-msg">Your trolley is empty</p>
+        </div>
+        <div class="cart-total">
+            <strong>Total: </strong><span id="cartTotalAmount">RM 0</span>
+        </div>
+        <div class="cart-actions">
+            <button class="clear-cart-btn" id="clearCartBtn">Clear Trolley</button>
+            <button class="checkout-btn" id="checkoutBtn">📞 Order Now (WhatsApp)</button>
+        </div>
+    </div>
+</div>
+
+<!-- Size Selection Modal -->
+<div class="size-modal" id="sizeModal">
+    <div class="size-modal-content">
+        <h3 id="sizeModalTitle">Select Size</h3>
+        <div class="size-options" id="sizeOptions">
+            <button class="size-option" data-size="whole">🍰 WHOLE</button>
+            <button class="size-option" data-size="half">🍰 HALF</button>
+            <button class="size-option" data-size="loaf">🍞 LOAF</button>
+        </div>
+        <div class="size-modal-buttons">
+            <button class="cancel-size-btn" id="cancelSizeBtn">Cancel</button>
+            <button class="confirm-add-btn" id="confirmAddToCartBtn">Add to Trolley</button>
+        </div>
+    </div>
+</div>
+
 <footer>
     🌸 Handcrafted with love & layers — each cake is a work of art. <br>
-    📞 To order, contact us: +60 18-579 4394(Whatsapp) 📍 Kota Samarahan, Sarawak
+    📞 To order, contact us: +60 18-579 4394 (WhatsApp) 📍 Kota Samarahan, Sarawak
 </footer>
 
 <script src="script.js"></script>
