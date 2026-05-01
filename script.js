@@ -13,26 +13,26 @@ let selectedCake = null;
 let currentAction = null; // 'cart' or 'order'
 
 const cakes = [
-    { id: 1, name: "SENJA NAN MERAH", whole: 320, half: 165, loaf: 85, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/SenjaNanMerah.jpg", badge: "Best Seller" },
-    { id: 2, name: "GREEN WOOD", whole: 300, half: 150, loaf: 80, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/GreenWood.jpg", badge: "Popular" },
-    { id: 3, name: "MADU KEMENYAN", whole: 190, half: 95, loaf: 50, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/MaduKemenyan.jpg", badge: "Value" },
-    { id: 4, name: "MILO SAUROUS", whole: 250, half: 125, loaf: 70, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/MiloSaurous.jpg", badge: "Family Fav" },
-    { id: 5, name: "MILO DINASOUR", whole: 250, half: 130, loaf: 70, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/MiloDinasour.jpg", badge: "Special" },
-    { id: 6, name: "BELACAN LUMUT CHEESE", whole: 250, half: 130, loaf: 70, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/BelacanLumutCheese.jpg", badge: "Signature" },
-    { id: 7, name: "LAPIS INDIA", whole: 220, half: 115, loaf: 60, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/LapisIndia.jpg", badge: "Exotic" },
-    { id: 8, name: "FAZURA", whole: 250, half: 130, loaf: 70, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Fazura.jpg", badge: "Elegant" },
-    { id: 9, name: "SISIK IKAN", whole: 250, half: 130, loaf: 70, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/SisikIkan.jpg", badge: "Heritage" },
-    { id: 10, name: "HATI PAREK", whole: 200, half: 105, loaf: 55, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/HatiParek.jpg", badge: "Traditional" },
-    { id: 11, name: "BELACAN", whole: 220, half: 115, loaf: 60, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Belacan.jpg", badge: "Unique" },
-    { id: 12, name: "LUMUT", whole: 200, half: 105, loaf: 55, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Lumut.jpg", badge: "Earthy" },
+    { id: 1, name: "SENJA NAN MERAH", whole: 320, half: 165, loaf: 85, category: "signature", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/SenjaNanMerah.jpg", badge: "Best Seller" },
+    { id: 2, name: "GREEN WOOD", whole: 300, half: 150, loaf: 80, category: "signature", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/GreenWood.jpg", badge: "Popular" },
+    { id: 3, name: "MADU KEMENYAN", whole: 190, half: 95, loaf: 50, category: "classic", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/MaduKemenyan.jpg", badge: "Value" },
+    { id: 4, name: "MILO SAUROUS", whole: 250, half: 125, loaf: 70, category: "classic", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/MiloSaurous.jpg", badge: "Family Fav" },
+    { id: 5, name: "MILO DINASOUR", whole: 250, half: 130, loaf: 70, category: "classic", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/MiloDinasour.jpg", badge: "Special" },
+    { id: 6, name: "BELACAN LUMUT CHEESE", whole: 250, half: 130, loaf: 70, category: "specialty", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/BelacanLumutCheese.jpg", badge: "Signature" },
+    { id: 7, name: "LAPIS INDIA", whole: 220, half: 115, loaf: 60, category: "specialty", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/LapisIndia.jpg", badge: "Exotic" },
+    { id: 8, name: "FAZURA", whole: 250, half: 130, loaf: 70, category: "signature", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Fazura.jpg", badge: "Elegant" },
+    { id: 9, name: "SISIK IKAN", whole: 250, half: 130, loaf: 70, category: "classic", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/SisikIkan.jpg", badge: "Heritage" },
+    { id: 10, name: "HATI PAREK", whole: 200, half: 105, loaf: 55, category: "classic", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/HatiParek.jpg", badge: "Traditional" },
+    { id: 11, name: "BELACAN", whole: 220, half: 115, loaf: 60, category: "specialty", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Belacan.jpg", badge: "Unique" },
+    { id: 12, name: "LUMUT", whole: 200, half: 105, loaf: 55, category: "specialty", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Lumut.jpg", badge: "Earthy" },
     { id: 13, name: "INTAN TERPILIH", whole: 200, half: 105, loaf: 55, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/IntanTerpilih.jpg", badge: "Premium" },
-    { id: 14, name: "PILIH KASIH", whole: 200, half: 105, loaf: 55, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/PilihKasih.jpg", badge: "Romantic" },
-    { id: 15, name: "IDOLA", whole: 200, half: 105, loaf: 55, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Idola.jpg", badge: "Exclusive" },
+    { id: 14, name: "PILIH KASIH", whole: 200, half: 105, loaf: 55, category: "classic", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/PilihKasih.jpg", badge: "Romantic" },
+    { id: 15, name: "IDOLA", whole: 200, half: 105, loaf: 55, category: "specialty", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Idola.jpg", badge: "Exclusive" },
     { id: 16, name: "LAPIS ONYX", whole: 350, half: 180, loaf: 95, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/ONYX.jpg", badge: "Dark" },
-    { id: 17, name: "LAPIS DAHLIA", whole: 300, half: 155, loaf: 60, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Dahlia.jpg", badge: "Artisan" },
+    { id: 17, name: "LAPIS DAHLIA", whole: 300, half: 155, loaf: 60, category: "signature", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Dahlia.jpg", badge: "Artisan" },
     { id: 18, name: "BAKLAVA", whole: 500, half: 255, loaf: 130, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Baklava.jpg", badge: "Viral" },
     { id: 19, name: "BLACK SHADOW", whole: 250, half: 130, loaf: 70, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/BlackShadow.jpg", badge: "Fragrant" },
-    { id: 20, name: "ROSE QUEEN", whole: 280, half: 145, loaf: 75, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/RoseQueen.jpg", badge: "Chocolate" }
+    { id: 20, name: "ROSE QUEEN", whole: 280, half: 145, loaf: 75, category: "classic", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/RoseQueen.jpg", badge: "Chocolate" }
 ];
 
 // DOM Elements
@@ -50,22 +50,23 @@ const checkoutBtn = document.getElementById('checkoutBtn');
 const sizeModal = document.getElementById('sizeModal');
 const cancelSizeBtn = document.getElementById('cancelSizeBtn');
 const confirmActionBtn = document.getElementById('confirmActionBtn');
-const sizeOptions = document.querySelectorAll('.size-option');
-const toast = document.getElementById('toastNotification');
 
 let activeCategory = 'all';
 let currentSearchTerm = '';
 let selectedSize = null;
 
-// Show toast notification (replaces alert)
+// Show toast notification
 function showToast(message, isSuccess = true) {
     const toastEl = document.getElementById('toastNotification');
-    toastEl.querySelector('#toastMessage').innerText = message;
-    toastEl.style.backgroundColor = isSuccess ? '#2d2418' : '#d32f2f';
-    toastEl.classList.add('show');
-    setTimeout(() => {
-        toastEl.classList.remove('show');
-    }, 2000);
+    const toastMessage = document.getElementById('toastMessage');
+    if (toastEl && toastMessage) {
+        toastMessage.innerText = message;
+        toastEl.style.backgroundColor = isSuccess ? '#2d2418' : '#d32f2f';
+        toastEl.classList.add('show');
+        setTimeout(() => {
+            toastEl.classList.remove('show');
+        }, 2000);
+    }
 }
 
 // Update cart count display
@@ -126,6 +127,7 @@ function addToCart(cake, size) {
         });
         saveCart();
         showToast(`✓ ${cake.name} (${sizeLabel}) added to trolley!`);
+        closeSizeModal();
     } else {
         showToast(`✗ ${sizeLabel} size for ${cake.name} is not available`, false);
     }
@@ -153,6 +155,7 @@ Terima kasih!`;
         const encodedMessage = encodeURIComponent(message);
         const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
         window.open(whatsappUrl, '_blank');
+        closeSizeModal();
     } else {
         showToast(`✗ ${sizeLabel} size for ${cake.name} is not available`, false);
     }
@@ -249,6 +252,7 @@ function checkoutToWhatsApp() {
     const encodedMessage = encodeURIComponent(orderSummary);
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
+    closeCartModal();
 }
 
 // Show size selection modal
@@ -256,28 +260,64 @@ function showSizeModal(cake, action) {
     selectedCake = cake;
     currentAction = action;
     
-    document.getElementById('sizeModalTitle').innerHTML = `Select Size for ${cake.name}`;
+    const titleEl = document.getElementById('sizeModalTitle');
+    if (titleEl) {
+        titleEl.innerHTML = `📏 Select Size for ${cake.name}`;
+    }
     
-    // Update size options availability based on price
-    sizeOptions.forEach(opt => {
+    // Get all size option buttons
+    const sizeOpts = document.querySelectorAll('.size-option');
+    
+    // Reset all styles
+    sizeOpts.forEach(opt => {
         const size = opt.getAttribute('data-size');
         let price = 0;
         if (size === 'whole') price = cake.whole;
         else if (size === 'half') price = cake.half;
         else price = cake.loaf;
         
-        opt.classList.remove('selected-option');
+        opt.classList.remove('selected-option', 'disabled-size');
+        opt.disabled = false;
+        opt.style.opacity = '1';
+        opt.style.cursor = 'pointer';
+        
         if (price === 0) {
             opt.classList.add('disabled-size');
             opt.disabled = true;
-        } else {
-            opt.classList.remove('disabled-size');
-            opt.disabled = false;
+            opt.style.opacity = '0.5';
+            opt.style.cursor = 'not-allowed';
         }
     });
     
-    sizeModal.style.display = 'flex';
+    // Reset selected size
     selectedSize = null;
+    
+    // Re-attach click handlers
+    sizeOpts.forEach(btn => {
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
+        
+        newBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (this.disabled) return;
+            
+            document.querySelectorAll('.size-option').forEach(opt => {
+                opt.classList.remove('selected-option');
+                opt.style.background = 'white';
+                opt.style.borderColor = '#f0e0ce';
+            });
+            
+            this.classList.add('selected-option');
+            this.style.background = '#b87c4f';
+            this.style.borderColor = '#b87c4f';
+            this.style.color = 'white';
+            
+            selectedSize = this.getAttribute('data-size');
+        });
+    });
+    
+    // Show modal
+    sizeModal.style.display = 'flex';
 }
 
 // Close size modal
@@ -300,19 +340,7 @@ function confirmAction() {
     } else if (currentAction === 'order') {
         directOrderWithSize(selectedCake, selectedSize);
     }
-    
-    closeSizeModal();
 }
-
-// Handle size selection
-sizeOptions.forEach(btn => {
-    btn.addEventListener('click', () => {
-        if (btn.disabled) return;
-        sizeOptions.forEach(opt => opt.classList.remove('selected-option'));
-        btn.classList.add('selected-option');
-        selectedSize = btn.getAttribute('data-size');
-    });
-});
 
 // Render menu cards
 function renderMenu() {
