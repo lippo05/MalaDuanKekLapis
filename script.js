@@ -1,228 +1,37 @@
 // ============================================================
-// COMPLETE 21 KEK LAPIS MENU with WHATSAPP INTEGRATION
-// All prices in Ringgit Malaysia (RM)
+// SYAZ KEK LAPIS - COMPLETE MENU with SHOPPING CART
 // ============================================================
 
-// YOUR WHATSAPP NUMBER (format: country code + number, no spaces, no +)
-// Example: +60 18-579 4394 becomes 60185794394
-const WHATSAPP_NUMBER = "60185794394";  // 🔴 CHANGE THIS TO YOUR NUMBER
+// WhatsApp Number (format: country code + number, no spaces, no +)
+const WHATSAPP_NUMBER = "60185794394";
+
+// Cart array to store items
+let cart = [];
+
+// Selected cake for adding to cart
+let selectedCakeForCart = null;
 
 const cakes = [
-    // Page 2
-    {
-        id: 1,
-        name: "SENJA NAN MERAH",
-        whole: 320,
-        half: 165,
-        loaf: 85,
-        category: "signature",
-        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/SenjaNanMerah.jpg",
-        badge: "Best Seller"
-    },
-    // Page 3
-    {
-        id: 2,
-        name: "GREEN WOOD",
-        whole: 300,
-        half: 150,
-        loaf: 80,
-        category: "signature",
-        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/GreenWood.jpg",
-        badge: "Popular"
-    },
-    {
-        id: 3,
-        name: "MADU KEMENYAN",
-        whole: 190,
-        half: 95,
-        loaf: 50,
-        category: "classic",
-        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/MaduKemenyan.jpg",
-        badge: "Value"
-    },
-    // Page 4
-    {
-        id: 4,
-        name: "MILO SAUROUS",
-        whole: 250,
-        half: 125,
-        loaf: 70,
-        category: "classic",
-        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/MiloSaurous.jpg",
-        badge: "Family Fav"
-    },
-    {
-        id: 5,
-        name: "MILO DINASOUR",
-        whole: 250,
-        half: 130,
-        loaf: 70,
-        category: "classic",
-        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/MiloDinasour.jpg",
-        badge: "Special"
-    },
-    // Page 6
-    {
-        id: 6,
-        name: "BELACAN LUMUT CHEESE",
-        whole: 250,
-        half: 130,
-        loaf: 70,
-        category: "specialty",
-        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/BelacanLumutCheese.jpg",
-        badge: "Signature"
-    },
-    {
-        id: 7,
-        name: "LAPIS INDIA",
-        whole: 220,
-        half: 115,
-        loaf: 60,
-        category: "specialty",
-        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/LapisIndia.jpg",
-        badge: "Exotic"
-    },
-    // Page 7
-    {
-        id: 8,
-        name: "FAZURA",
-        whole: 250,
-        half: 130,
-        loaf: 70,
-        category: "signature",
-        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Fazura.jpg",
-        badge: "Elegant"
-    },
-    // Page 8
-    {
-        id: 9,
-        name: "SISIK IKAN",
-        whole: 250,
-        half: 130,
-        loaf: 70,
-        category: "classic",
-        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/SisikIkan.jpg",
-        badge: "Heritage"
-    },
-    // Page 10
-    {
-        id: 10,
-        name: "HATI PAREK",
-        whole: 200,
-        half: 105,
-        loaf: 55,
-        category: "classic",
-        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/HatiParek.jpg",
-        badge: "Traditional"
-    },
-    // Page 11
-    {
-        id: 11,
-        name: "BELACAN",
-        whole: 220,
-        half: 115,
-        loaf: 60,
-        category: "specialty",
-        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Belacan.jpg",
-        badge: "Unique"
-    },
-    // Page 12
-    {
-        id: 12,
-        name: "LUMUT",
-        whole: 200,
-        half: 105,
-        loaf: 55,
-        category: "specialty",
-        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Lumut.jpg",
-        badge: "Earthy"
-    },
-    // Page 13
-    {
-        id: 13,
-        name: "INTAN TERPILIH",
-        whole: 200,
-        half: 105,
-        loaf: 55,
-        category: "premium",
-        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/IntanTerpilih.jpg",
-        badge: "Premium"
-    },
-    // Page 14
-    {
-        id: 14,
-        name: "PILIH KASIH",
-        whole: 200,
-        half: 105,
-        loaf: 55,
-        category: "classic",
-        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/PilihKasih.jpg",
-        badge: "Romantic"
-    },
-    // Page 15
-    {
-        id: 15,
-        name: "IDOLA",
-        whole: 200,
-        half: 105,
-        loaf: 55,
-        category: "specialty",
-        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Idola.jpg",
-        badge: "Exclusive"
-    },
-    // Page 16
-    {
-        id: 16,
-        name: "LAPIS ONYX",
-        whole: 350,
-        half: 180,
-        loaf: 95,
-        category: "premium",
-        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/ONYX.jpg",
-        badge: "Dark"
-    },
-    // Page 17
-    {
-        id: 17,
-        name: "LAPIS DAHLIA",
-        whole: 300,
-        half: 155,
-        loaf: 60,
-        category: "signature",
-        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Dahlia.jpg",
-        badge: "Artisan"
-    },
-    // Additional cakes
-    {
-        id: 18,
-        name: "BAKLAVA",
-        whole: 500,
-        half: 255,
-        loaf: 130,
-        category: "premium",
-        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Baklava.jpg",
-        badge: "Viral"
-    },
-    {
-        id: 19,
-        name: "BLACK SHADOW",
-        whole: 250,
-        half: 130,
-        loaf: 70,
-        category: "premium",
-        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/BlackShadow.jpg",
-        badge: "Fragrant"
-    },
-    {
-        id: 20,
-        name: "ROSE QUEEN",
-        whole: 280,
-        half: 145,
-        loaf: 75,
-        category: "classic",
-        image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/RoseQueen.jpg",
-        badge: "Chocolate"
-    }
+    { id: 1, name: "SENJA NAN MERAH", whole: 320, half: 165, loaf: 85, category: "signature", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/SenjaNanMerah.jpg", badge: "Best Seller" },
+    { id: 2, name: "GREEN WOOD", whole: 300, half: 150, loaf: 80, category: "signature", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/GreenWood.jpg", badge: "Popular" },
+    { id: 3, name: "MADU KEMENYAN", whole: 190, half: 95, loaf: 50, category: "classic", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/MaduKemenyan.jpg", badge: "Value" },
+    { id: 4, name: "MILO SAUROUS", whole: 250, half: 125, loaf: 70, category: "classic", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/MiloSaurous.jpg", badge: "Family Fav" },
+    { id: 5, name: "MILO DINASOUR", whole: 250, half: 130, loaf: 70, category: "classic", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/MiloDinasour.jpg", badge: "Special" },
+    { id: 6, name: "BELACAN LUMUT CHEESE", whole: 250, half: 130, loaf: 70, category: "specialty", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/BelacanLumutCheese.jpg", badge: "Signature" },
+    { id: 7, name: "LAPIS INDIA", whole: 220, half: 115, loaf: 60, category: "specialty", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/LapisIndia.jpg", badge: "Exotic" },
+    { id: 8, name: "FAZURA", whole: 250, half: 130, loaf: 70, category: "signature", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Fazura.jpg", badge: "Elegant" },
+    { id: 9, name: "SISIK IKAN", whole: 250, half: 130, loaf: 70, category: "classic", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/SisikIkan.jpg", badge: "Heritage" },
+    { id: 10, name: "HATI PAREK", whole: 200, half: 105, loaf: 55, category: "classic", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/HatiParek.jpg", badge: "Traditional" },
+    { id: 11, name: "BELACAN", whole: 220, half: 115, loaf: 60, category: "specialty", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Belacan.jpg", badge: "Unique" },
+    { id: 12, name: "LUMUT", whole: 200, half: 105, loaf: 55, category: "specialty", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Lumut.jpg", badge: "Earthy" },
+    { id: 13, name: "INTAN TERPILIH", whole: 200, half: 105, loaf: 55, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/IntanTerpilih.jpg", badge: "Premium" },
+    { id: 14, name: "PILIH KASIH", whole: 200, half: 105, loaf: 55, category: "classic", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/PilihKasih.jpg", badge: "Romantic" },
+    { id: 15, name: "IDOLA", whole: 200, half: 105, loaf: 55, category: "specialty", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Idola.jpg", badge: "Exclusive" },
+    { id: 16, name: "LAPIS ONYX", whole: 350, half: 180, loaf: 95, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/ONYX.jpg", badge: "Dark" },
+    { id: 17, name: "LAPIS DAHLIA", whole: 300, half: 155, loaf: 60, category: "signature", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Dahlia.jpg", badge: "Artisan" },
+    { id: 18, name: "BAKLAVA", whole: 500, half: 255, loaf: 130, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/Baklava.jpg", badge: "Viral" },
+    { id: 19, name: "BLACK SHADOW", whole: 250, half: 130, loaf: 70, category: "premium", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/BlackShadow.jpg", badge: "Fragrant" },
+    { id: 20, name: "ROSE QUEEN", whole: 280, half: 145, loaf: 75, category: "classic", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/RoseQueen.jpg", badge: "Chocolate" }
 ];
 
 // DOM Elements
@@ -230,66 +39,265 @@ const menuGrid = document.getElementById('menuGrid');
 const searchInput = document.getElementById('searchInput');
 const noResultMsgDiv = document.getElementById('noResultMsg');
 const cakeCountSpan = document.getElementById('cakeCount');
+const cartIconBtn = document.getElementById('cartIconBtn');
+const cartModal = document.getElementById('cartModal');
+const closeCartBtn = document.getElementById('closeCartBtn');
+const cartItemsDiv = document.getElementById('cartItems');
+const cartTotalAmount = document.getElementById('cartTotalAmount');
+const clearCartBtn = document.getElementById('clearCartBtn');
+const checkoutBtn = document.getElementById('checkoutBtn');
+const sizeModal = document.getElementById('sizeModal');
+const cancelSizeBtn = document.getElementById('cancelSizeBtn');
+const confirmAddToCartBtn = document.getElementById('confirmAddToCartBtn');
+const sizeOptions = document.querySelectorAll('.size-option');
+
 let activeCategory = 'all';
 let currentSearchTerm = '';
+let selectedSize = null;
 
-// Update cake count display
-function updateCakeCount() {
-    if (cakeCountSpan) {
-        cakeCountSpan.innerText = cakes.length;
+// Update cart count display
+function updateCartCount() {
+    const cartCount = document.getElementById('cartCount');
+    if (cartCount) {
+        cartCount.innerText = cart.length;
     }
 }
 
-// Create WhatsApp order button for each cake
-function createWhatsAppButton(cakeName, cakePrice) {
-    const button = document.createElement('button');
-    button.className = 'order-btn';
-    button.innerText = '📞 Enquire / Order';
+// Save cart to localStorage
+function saveCart() {
+    localStorage.setItem('kekLapisCart', JSON.stringify(cart));
+    updateCartCount();
+}
+
+// Load cart from localStorage
+function loadCart() {
+    const savedCart = localStorage.getItem('kekLapisCart');
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        updateCartCount();
+    }
+}
+
+// Add to cart function
+function addToCart(cake, size) {
+    let price = 0;
+    let sizeLabel = '';
     
-    button.addEventListener('click', () => {
-        // Create a pre-filled message with cake details
-        const message = `Selamat Pagi,Kamek mok order *${cakeName}*.
-        
-     *Cake Details*
-    Name Oder: *Nama Pembeli*
-    Name: ${cakeName}
-    Size (Whole/Half/Loaf): 
-    Tarikh (PickUP/Delivery): *Tarikh ambik/hantar*
-    Alamat (Jika Delivery):*Alamat Rumah* `;
-        
-        const encodedMessage = encodeURIComponent(message);
-        
-        // WhatsApp URL - opens chat with pre-filled message
-        const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
-        
-        // Open WhatsApp in new tab
-        window.open(whatsappUrl, '_blank');
+    switch(size) {
+        case 'whole':
+            price = cake.whole;
+            sizeLabel = 'WHOLE';
+            break;
+        case 'half':
+            price = cake.half;
+            sizeLabel = 'HALF';
+            break;
+        case 'loaf':
+            price = cake.loaf;
+            sizeLabel = 'LOAF';
+            break;
+    }
+    
+    if (price > 0) {
+        cart.push({
+            id: cake.id,
+            name: cake.name,
+            size: sizeLabel,
+            sizeKey: size,
+            price: price,
+            cakeData: cake
+        });
+        saveCart();
+        alert(`✅ ${cake.name} (${sizeLabel}) added to trolley!`);
+    } else {
+        alert(`⚠️ ${sizeLabel} size for ${cake.name} is not available. Please contact us directly.`);
+    }
+}
+
+// Remove from cart
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    saveCart();
+    displayCart();
+}
+
+// Display cart items
+function displayCart() {
+    if (cart.length === 0) {
+        cartItemsDiv.innerHTML = '<p class="empty-cart-msg">Your trolley is empty</p>';
+        cartTotalAmount.innerText = 'RM 0';
+        return;
+    }
+    
+    let total = 0;
+    let html = '';
+    cart.forEach((item, index) => {
+        total += item.price;
+        html += `
+            <div class="cart-item">
+                <div class="cart-item-info">
+                    <div class="cart-item-name">${item.name}</div>
+                    <div class="cart-item-size">${item.size}</div>
+                </div>
+                <div class="cart-item-price">RM ${item.price}</div>
+                <button class="remove-item" data-index="${index}">✖</button>
+            </div>
+        `;
     });
     
-    return button;
+    cartItemsDiv.innerHTML = html;
+    cartTotalAmount.innerText = `RM ${total}`;
+    
+    // Add remove event listeners
+    document.querySelectorAll('.remove-item').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const index = parseInt(btn.getAttribute('data-index'));
+            removeFromCart(index);
+        });
+    });
 }
+
+// Open cart modal
+function openCartModal() {
+    displayCart();
+    cartModal.style.display = 'flex';
+}
+
+// Close cart modal
+function closeCartModal() {
+    cartModal.style.display = 'none';
+}
+
+// Clear cart
+function clearCart() {
+    if (confirm('Are you sure you want to clear your trolley?')) {
+        cart = [];
+        saveCart();
+        displayCart();
+    }
+}
+
+// Checkout - send all cart items to WhatsApp
+function checkoutToWhatsApp() {
+    if (cart.length === 0) {
+        alert('Your trolley is empty! Please add items before ordering.');
+        return;
+    }
+    
+    let orderSummary = '🍰 *SYAZ KEK LAPIS ORDER* 🍰\n\n';
+    let total = 0;
+    
+    cart.forEach((item, index) => {
+        orderSummary += `${index + 1}. ${item.name} (${item.size}) - RM ${item.price}\n`;
+        total += item.price;
+    });
+    
+    orderSummary += `\n*Total: RM ${total}*\n\n`;
+    orderSummary += `📋 *Customer Details:*\n`;
+    orderSummary += `Nama: \n`;
+    orderSummary += `No Telefon: \n`;
+    orderSummary += `Tarikh Ambil/Hantar: \n`;
+    orderSummary += `Alamat (Jika Delivery): \n\n`;
+    orderSummary += `_Sila isi maklumat di atas sebelum hantar._`;
+    
+    const encodedMessage = encodeURIComponent(orderSummary);
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+    
+    window.open(whatsappUrl, '_blank');
+}
+
+// Direct order - single cake to WhatsApp
+function directOrder(cake) {
+    const message = `🍰 *ORDER: ${cake.name}* 🍰
+    
+📋 *Sila pilih saiz:*
+- WHOLE: RM ${cake.whole}
+- HALF: RM ${cake.half}
+- LOAF: RM ${cake.loaf}
+
+📝 *Maklumat Pesanan:*
+Nama: 
+Saiz: 
+Tarikh Ambil/Hantar: 
+Alamat (Jika Delivery): 
+
+Terima kasih!`;
+    
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+}
+
+// Show size selection modal for adding to cart
+function showSizeModal(cake) {
+    selectedCakeForCart = cake;
+    document.getElementById('sizeModalTitle').innerHTML = `Select Size for ${cake.name}`;
+    
+    // Reset size options highlight
+    sizeOptions.forEach(opt => {
+        opt.style.background = 'white';
+        const size = opt.getAttribute('data-size');
+        let price = 0;
+        if (size === 'whole') price = cake.whole;
+        else if (size === 'half') price = cake.half;
+        else price = cake.loaf;
+        
+        if (price === 0) {
+            opt.style.opacity = '0.5';
+            opt.disabled = true;
+        } else {
+            opt.style.opacity = '1';
+            opt.disabled = false;
+        }
+    });
+    
+    sizeModal.style.display = 'flex';
+    selectedSize = null;
+}
+
+// Close size modal
+function closeSizeModal() {
+    sizeModal.style.display = 'none';
+    selectedCakeForCart = null;
+    selectedSize = null;
+}
+
+// Confirm add to cart
+function confirmAddToCart() {
+    if (!selectedSize) {
+        alert('Please select a size first!');
+        return;
+    }
+    if (selectedCakeForCart) {
+        addToCart(selectedCakeForCart, selectedSize);
+        closeSizeModal();
+    }
+}
+
+// Handle size selection
+sizeOptions.forEach(btn => {
+    btn.addEventListener('click', () => {
+        sizeOptions.forEach(opt => opt.style.background = 'white');
+        btn.style.background = '#f5e6d6';
+        selectedSize = btn.getAttribute('data-size');
+    });
+});
 
 // Render menu cards
 function renderMenu() {
-    // Filter by category
     let filtered = cakes.filter(cake => {
         if (activeCategory === 'all') return true;
         return cake.category === activeCategory;
     });
 
-    // Filter by search term
     if (currentSearchTerm.trim() !== '') {
         const term = currentSearchTerm.trim().toLowerCase();
-        filtered = filtered.filter(cake => 
-            cake.name.toLowerCase().includes(term)
-        );
+        filtered = filtered.filter(cake => cake.name.toLowerCase().includes(term));
     }
 
-    // Remove existing cards
     const existingCards = menuGrid.querySelectorAll('.cake-card');
     existingCards.forEach(card => card.remove());
 
-    // Show/hide no results
     if (filtered.length === 0) {
         noResultMsgDiv.style.display = 'block';
         return;
@@ -297,12 +305,10 @@ function renderMenu() {
         noResultMsgDiv.style.display = 'none';
     }
 
-    // Create cards for each cake
     filtered.forEach(cake => {
         const card = document.createElement('div');
         card.className = 'cake-card';
 
-        // Image container with actual cake image
         const imgDiv = document.createElement('div');
         imgDiv.className = 'card-img';
         imgDiv.style.backgroundImage = `url('${cake.image}')`;
@@ -314,7 +320,6 @@ function renderMenu() {
         badgeSpan.innerText = cake.badge;
         imgDiv.appendChild(badgeSpan);
 
-        // Content area
         const contentDiv = document.createElement('div');
         contentDiv.className = 'card-content';
 
@@ -322,15 +327,13 @@ function renderMenu() {
         nameEl.className = 'cake-name';
         nameEl.innerText = cake.name;
 
-        // Description (add fallback if missing)
         const descEl = document.createElement('p');
         descEl.className = 'cake-desc';
-        descEl.innerText = cake.description || "Delicious handcrafted Sarawak layered cake with premium ingredients.";
+        descEl.innerText = "Delicious handcrafted Sarawak layered cake with premium ingredients.";
 
         const priceGroup = document.createElement('div');
         priceGroup.className = 'price-group';
 
-        // Add price rows only if price > 0
         if (cake.whole > 0) {
             const wholeRow = document.createElement('div');
             wholeRow.className = 'price-item';
@@ -352,20 +355,26 @@ function renderMenu() {
             priceGroup.appendChild(loafRow);
         }
 
-        if (cake.whole === 0 && cake.half === 0 && cake.loaf === 0) {
-            const contactRow = document.createElement('div');
-            contactRow.className = 'price-item';
-            contactRow.innerHTML = `<span class="size-label">📞 Call for Price</span><span class="price-value">—</span>`;
-            priceGroup.appendChild(contactRow);
-        }
+        const buttonGroup = document.createElement('div');
+        buttonGroup.className = 'button-group';
 
-        // Create WhatsApp button (using whole cake price as reference)
-        const orderBtn = createWhatsAppButton(cake.name, cake.whole);
+        const orderNowBtn = document.createElement('button');
+        orderNowBtn.className = 'order-now-btn';
+        orderNowBtn.innerText = '📞 Order Now';
+        orderNowBtn.addEventListener('click', () => directOrder(cake));
+
+        const addToCartBtn = document.createElement('button');
+        addToCartBtn.className = 'add-to-cart-btn';
+        addToCartBtn.innerText = '🛒 Masuk ke Troli';
+        addToCartBtn.addEventListener('click', () => showSizeModal(cake));
+
+        buttonGroup.appendChild(orderNowBtn);
+        buttonGroup.appendChild(addToCartBtn);
 
         contentDiv.appendChild(nameEl);
         contentDiv.appendChild(descEl);
         contentDiv.appendChild(priceGroup);
-        contentDiv.appendChild(orderBtn);
+        contentDiv.appendChild(buttonGroup);
 
         card.appendChild(imgDiv);
         card.appendChild(contentDiv);
@@ -388,7 +397,7 @@ function setActiveCategory(cat) {
     renderMenu();
 }
 
-// Search handler with debounce
+// Search handler
 let debounceTimeout;
 function handleSearchInput() {
     clearTimeout(debounceTimeout);
@@ -408,11 +417,22 @@ function setupEventListeners() {
         });
     });
     searchInput.addEventListener('input', handleSearchInput);
+    cartIconBtn.addEventListener('click', openCartModal);
+    closeCartBtn.addEventListener('click', closeCartModal);
+    clearCartBtn.addEventListener('click', clearCart);
+    checkoutBtn.addEventListener('click', checkoutToWhatsApp);
+    cancelSizeBtn.addEventListener('click', closeSizeModal);
+    confirmAddToCartBtn.addEventListener('click', confirmAddToCart);
+    window.addEventListener('click', (e) => {
+        if (e.target === cartModal) closeCartModal();
+        if (e.target === sizeModal) closeSizeModal();
+    });
 }
 
 // Initialize
 function init() {
-    updateCakeCount();
+    loadCart();
+    if (cakeCountSpan) cakeCountSpan.innerText = cakes.length;
     setupEventListeners();
     renderMenu();
 }
