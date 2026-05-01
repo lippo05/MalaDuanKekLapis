@@ -55,7 +55,7 @@
 <div class="cart-modal" id="cartModal">
     <div class="cart-modal-content">
         <div class="cart-modal-header">
-            <h2>🛒 Your Trolley</h2>
+            <h2>🛒 My Trolley</h2>
             <button class="close-cart" id="closeCartBtn">&times;</button>
         </div>
         <div class="cart-items" id="cartItems">
@@ -65,13 +65,13 @@
             <strong>Total: </strong><span id="cartTotalAmount">RM 0</span>
         </div>
         <div class="cart-actions">
-            <button class="clear-cart-btn" id="clearCartBtn">Clear Trolley</button>
+            <button class="clear-cart-btn" id="clearCartBtn">🗑️ Clear Trolley</button>
             <button class="checkout-btn" id="checkoutBtn">📞 Order Now (WhatsApp)</button>
         </div>
     </div>
 </div>
 
-<!-- Size Selection Modal -->
+<!-- Size Selection Modal (for both Order Now and Add to Trolley) -->
 <div class="size-modal" id="sizeModal">
     <div class="size-modal-content">
         <h3 id="sizeModalTitle">Select Size</h3>
@@ -82,9 +82,14 @@
         </div>
         <div class="size-modal-buttons">
             <button class="cancel-size-btn" id="cancelSizeBtn">Cancel</button>
-            <button class="confirm-add-btn" id="confirmAddToCartBtn">Add to Trolley</button>
+            <button class="confirm-btn" id="confirmActionBtn">Confirm</button>
         </div>
     </div>
+</div>
+
+<!-- Toast Notification (replaces alert) -->
+<div class="toast-notification" id="toastNotification">
+    <span id="toastMessage"></span>
 </div>
 
 <footer>
