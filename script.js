@@ -8,8 +8,9 @@ const WHATSAPP_NUMBER = "60185794394";
 // Cart array to store items
 let cart = [];
 
-// Selected cake for adding to cart
-let selectedCakeForCart = null;
+// Selected cake and action type for modal
+let selectedCake = null;
+let currentAction = null; // 'cart' or 'order'
 
 const cakes = [
     { id: 1, name: "SENJA NAN MERAH", whole: 320, half: 165, loaf: 85, category: "signature", image: "https://raw.githubusercontent.com/lippo05/MalaDuanKekLapis/refs/heads/main/images/SenjaNanMerah.jpg", badge: "Best Seller" },
@@ -48,12 +49,24 @@ const clearCartBtn = document.getElementById('clearCartBtn');
 const checkoutBtn = document.getElementById('checkoutBtn');
 const sizeModal = document.getElementById('sizeModal');
 const cancelSizeBtn = document.getElementById('cancelSizeBtn');
-const confirmAddToCartBtn = document.getElementById('confirmAddToCartBtn');
+const confirmActionBtn = document.getElementById('confirmActionBtn');
 const sizeOptions = document.querySelectorAll('.size-option');
+const toast = document.getElementById('toastNotification');
 
 let activeCategory = 'all';
 let currentSearchTerm = '';
 let selectedSize = null;
+
+// Show toast notification (replaces alert)
+function showToast(message, isSuccess = true) {
+    const toastEl = document.getElementById('toastNotification');
+    toastEl.querySelector('#toastMessage').innerText = message;
+    toastEl.style.backgroundColor = isSuccess ? '#2d2418' : '#d32f2f';
+    toastEl.classList.add('show');
+    setTimeout(() => {
+        toastEl.classList.remove('show');
+    }, 2000);
+}
 
 // Update cart count display
 function updateCartCount() {
@@ -78,25 +91,30 @@ function loadCart() {
     }
 }
 
+// Get price for a specific size
+function getPriceForSize(cake, size) {
+    switch(size) {
+        case 'whole': return cake.whole;
+        case 'half': return cake.half;
+        case 'loaf': return cake.loaf;
+        default: return 0;
+    }
+}
+
+// Get size label
+function getSizeLabel(size) {
+    switch(size) {
+        case 'whole': return 'WHOLE';
+        case 'half': return 'HALF';
+        case 'loaf': return 'LOAF';
+        default: return '';
+    }
+}
+
 // Add to cart function
 function addToCart(cake, size) {
-    let price = 0;
-    let sizeLabel = '';
-    
-    switch(size) {
-        case 'whole':
-            price = cake.whole;
-            sizeLabel = 'WHOLE';
-            break;
-        case 'half':
-            price = cake.half;
-            sizeLabel = 'HALF';
-            break;
-        case 'loaf':
-            price = cake.loaf;
-            sizeLabel = 'LOAF';
-            break;
-    }
+    const price = getPriceForSize(cake, size);
+    const sizeLabel = getSizeLabel(size);
     
     if (price > 0) {
         cart.push({
@@ -104,21 +122,49 @@ function addToCart(cake, size) {
             name: cake.name,
             size: sizeLabel,
             sizeKey: size,
-            price: price,
-            cakeData: cake
+            price: price
         });
         saveCart();
-        alert(`✅ ${cake.name} (${sizeLabel}) added to trolley!`);
+        showToast(`✓ ${cake.name} (${sizeLabel}) added to trolley!`);
     } else {
-        alert(`⚠️ ${sizeLabel} size for ${cake.name} is not available. Please contact us directly.`);
+        showToast(`✗ ${sizeLabel} size for ${cake.name} is not available`, false);
+    }
+}
+
+// Direct order to WhatsApp with selected size
+function directOrderWithSize(cake, size) {
+    const price = getPriceForSize(cake, size);
+    const sizeLabel = getSizeLabel(size);
+    
+    if (price > 0) {
+        const message = `🍰 *ORDER: ${cake.name}* 🍰
+        
+📋 *Saiz Dipilih:*
+${sizeLabel} - RM ${price}
+
+📝 *Maklumat Pesanan:*
+Nama: 
+Saiz: ${sizeLabel}
+Tarikh Ambil/Hantar: 
+Alamat (Jika Delivery): 
+
+Terima kasih!`;
+        
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+        window.open(whatsappUrl, '_blank');
+    } else {
+        showToast(`✗ ${sizeLabel} size for ${cake.name} is not available`, false);
     }
 }
 
 // Remove from cart
 function removeFromCart(index) {
+    const removed = cart[index];
     cart.splice(index, 1);
     saveCart();
     displayCart();
+    showToast(`✓ ${removed.name} (${removed.size}) removed from trolley`);
 }
 
 // Display cart items
@@ -148,7 +194,6 @@ function displayCart() {
     cartItemsDiv.innerHTML = html;
     cartTotalAmount.innerText = `RM ${total}`;
     
-    // Add remove event listeners
     document.querySelectorAll('.remove-item').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const index = parseInt(btn.getAttribute('data-index'));
@@ -170,17 +215,18 @@ function closeCartModal() {
 
 // Clear cart
 function clearCart() {
-    if (confirm('Are you sure you want to clear your trolley?')) {
+    if (cart.length > 0) {
         cart = [];
         saveCart();
         displayCart();
+        showToast('✓ Trolley cleared');
     }
 }
 
 // Checkout - send all cart items to WhatsApp
 function checkoutToWhatsApp() {
     if (cart.length === 0) {
-        alert('Your trolley is empty! Please add items before ordering.');
+        showToast('Your trolley is empty! Please add items first.', false);
         return;
     }
     
@@ -193,7 +239,7 @@ function checkoutToWhatsApp() {
     });
     
     orderSummary += `\n*Total: RM ${total}*\n\n`;
-    orderSummary += `📋 *Customer Details:*\n`;
+    orderSummary += `📋 *Maklumat Pelanggan:*\n`;
     orderSummary += `Nama: \n`;
     orderSummary += `No Telefon: \n`;
     orderSummary += `Tarikh Ambil/Hantar: \n`;
@@ -202,51 +248,30 @@ function checkoutToWhatsApp() {
     
     const encodedMessage = encodeURIComponent(orderSummary);
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
-    
     window.open(whatsappUrl, '_blank');
 }
 
-// Direct order - single cake to WhatsApp
-function directOrder(cake) {
-    const message = `🍰 *ORDER: ${cake.name}* 🍰
+// Show size selection modal
+function showSizeModal(cake, action) {
+    selectedCake = cake;
+    currentAction = action;
     
-📋 *Sila pilih saiz:*
-- WHOLE: RM ${cake.whole}
-- HALF: RM ${cake.half}
-- LOAF: RM ${cake.loaf}
-
-📝 *Maklumat Pesanan:*
-Nama: 
-Saiz: 
-Tarikh Ambil/Hantar: 
-Alamat (Jika Delivery): 
-
-Terima kasih!`;
-    
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
-    window.open(whatsappUrl, '_blank');
-}
-
-// Show size selection modal for adding to cart
-function showSizeModal(cake) {
-    selectedCakeForCart = cake;
     document.getElementById('sizeModalTitle').innerHTML = `Select Size for ${cake.name}`;
     
-    // Reset size options highlight
+    // Update size options availability based on price
     sizeOptions.forEach(opt => {
-        opt.style.background = 'white';
         const size = opt.getAttribute('data-size');
         let price = 0;
         if (size === 'whole') price = cake.whole;
         else if (size === 'half') price = cake.half;
         else price = cake.loaf;
         
+        opt.classList.remove('selected-option');
         if (price === 0) {
-            opt.style.opacity = '0.5';
+            opt.classList.add('disabled-size');
             opt.disabled = true;
         } else {
-            opt.style.opacity = '1';
+            opt.classList.remove('disabled-size');
             opt.disabled = false;
         }
     });
@@ -258,27 +283,33 @@ function showSizeModal(cake) {
 // Close size modal
 function closeSizeModal() {
     sizeModal.style.display = 'none';
-    selectedCakeForCart = null;
+    selectedCake = null;
+    currentAction = null;
     selectedSize = null;
 }
 
-// Confirm add to cart
-function confirmAddToCart() {
+// Confirm action based on currentAction
+function confirmAction() {
     if (!selectedSize) {
-        alert('Please select a size first!');
+        showToast('Please select a size first!', false);
         return;
     }
-    if (selectedCakeForCart) {
-        addToCart(selectedCakeForCart, selectedSize);
-        closeSizeModal();
+    
+    if (currentAction === 'cart') {
+        addToCart(selectedCake, selectedSize);
+    } else if (currentAction === 'order') {
+        directOrderWithSize(selectedCake, selectedSize);
     }
+    
+    closeSizeModal();
 }
 
 // Handle size selection
 sizeOptions.forEach(btn => {
     btn.addEventListener('click', () => {
-        sizeOptions.forEach(opt => opt.style.background = 'white');
-        btn.style.background = '#f5e6d6';
+        if (btn.disabled) return;
+        sizeOptions.forEach(opt => opt.classList.remove('selected-option'));
+        btn.classList.add('selected-option');
         selectedSize = btn.getAttribute('data-size');
     });
 });
@@ -361,12 +392,12 @@ function renderMenu() {
         const orderNowBtn = document.createElement('button');
         orderNowBtn.className = 'order-now-btn';
         orderNowBtn.innerText = '📞 Order Now';
-        orderNowBtn.addEventListener('click', () => directOrder(cake));
+        orderNowBtn.addEventListener('click', () => showSizeModal(cake, 'order'));
 
         const addToCartBtn = document.createElement('button');
         addToCartBtn.className = 'add-to-cart-btn';
         addToCartBtn.innerText = '🛒 Masuk ke Troli';
-        addToCartBtn.addEventListener('click', () => showSizeModal(cake));
+        addToCartBtn.addEventListener('click', () => showSizeModal(cake, 'cart'));
 
         buttonGroup.appendChild(orderNowBtn);
         buttonGroup.appendChild(addToCartBtn);
@@ -422,7 +453,7 @@ function setupEventListeners() {
     clearCartBtn.addEventListener('click', clearCart);
     checkoutBtn.addEventListener('click', checkoutToWhatsApp);
     cancelSizeBtn.addEventListener('click', closeSizeModal);
-    confirmAddToCartBtn.addEventListener('click', confirmAddToCart);
+    confirmActionBtn.addEventListener('click', confirmAction);
     window.addEventListener('click', (e) => {
         if (e.target === cartModal) closeCartModal();
         if (e.target === sizeModal) closeSizeModal();
